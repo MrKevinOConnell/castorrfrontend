@@ -49,13 +49,15 @@ Now, the content of `build` folder will be the extension ready to be submitted t
 ## Secrets
 
 make a file called secrets.js
-
+```
 // config.js
 const CONFIG = {
   API_BASE_URL: 'https://www.example.com',
 };
 
+
 export default CONFIG;
+```
 
 ## Resources:
 
