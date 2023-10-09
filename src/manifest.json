@@ -1,5 +1,6 @@
 {
   "manifest_version": 3,
+  "version": "0.0.0.1",
   "name": "castorrr",
   "description": "A extension that loads a farcaster channel for any website",
   "options_page": "options.html",
