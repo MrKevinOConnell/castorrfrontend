@@ -8,7 +8,7 @@
 
 # production
 /build
-
+.env
 # zip
 /zip
 
@@ -19,6 +19,6 @@
 .env.test.local
 .env.production.local
 .history
-
+secrets.js
 # secrets
 secrets.*.js

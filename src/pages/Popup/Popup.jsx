@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import './Popup.css';
 import useSWR from 'swr';
-import { removeTrailingSlash } from '../../utils/normalUtils';
+import { removeTrailingSlash, API_BASE_URL } from '../../utils/normalUtils';
 import Login from '../components/Login';
 
 const refreshInterval = 20000;
@@ -42,7 +42,7 @@ const Popup = () => {
     isLoading: isLoadingCurrent,
   } = useSWR(
     getUrlWithCursor(
-      `http://localhost:4000/get_channel?url=${currentURL}`,
+      `${API_BASE_URL}/get_channel?url=${currentURL}`,
       cursorCurrent
     ),
     fetcher,
@@ -55,7 +55,7 @@ const Popup = () => {
     isLoading: isLoadingParent,
   } = useSWR(
     getUrlWithCursor(
-      `http://localhost:4000/get_channel?url=${parentURL}`,
+      `${API_BASE_URL}/get_channel?url=${parentURL}`,
       cursorParent
     ),
     fetcher,
@@ -80,7 +80,7 @@ const Popup = () => {
 
       if (entries[0].isIntersecting && activeCursor) {
         const nextData = await fetcher(
-          `http://localhost:4000/get_channel?url=${currentURL}&cursor=${activeCursor})`
+          `${API_BASE_URL}/get_channel?url=${currentURL}&cursor=${activeCursor})`
         );
         mutate(
           (prev) => ({

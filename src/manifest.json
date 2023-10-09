@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "version": "0.0.0.1",
-  "name": "castorrr",
-  "description": "A extension that loads a farcaster channel for any website",
+  "name": "Castorrr",
+  "description": "",
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
   "action": {
@@ -11,10 +11,6 @@
   },
   "icons": {
     "128": "spaceman.png"
-  },
-  "content_security_policy": {
-    "default-src": "'self'",
-    "connect-src": "http://localhost:4000"
   },
   "permissions": ["tabs"],
   "devtools_page": "devtools.html",
