@@ -1,6 +1,6 @@
 body {
   width: 300px;
-  height: 260px;
+  height: 500px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -11,7 +11,41 @@ body {
   position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fixed-url {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Or any color to match your design */
+  z-index: 100;
 }
+
+.casts-container {
+  overflow-y: auto; /* Allow scrolling when the content overflows */
+  padding: 10px;
+}
+
+
+.cast-item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e1e1e1;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.cast-item img {
+  margin-right: 10px; 
+}
+
+.cast-item h4 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.cast-item p {
+  margin: 5px 0;
+}
+

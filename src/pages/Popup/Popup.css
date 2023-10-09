@@ -1,45 +1,131 @@
-.App {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  text-align: center;
+html, body {
   height: 100%;
-  padding: 10px;
-  background-color: #282c34;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  height: 100%;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #FFF;
+  height: 20px;
+  z-index: 10;
+}
+
+.flex-content {
+  min-height: 200px; /* added to make sure this can shrink */
+  overflow-y: auto;  /* changed from scroll to auto so scrollbar only appears when needed */
+  flex: 1;
+  margin-top: 20px;  /* space for the fixed header */
+  margin-bottom: 150px;  /* space for the fixed footer, adjust as needed */
+  max-height: 300px;
+}
+
+.login-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 235px;
+  background-color: #FFF;
+  z-index: 10;
+}
+
+
+
+/* ... existing styles ... */
+.cast-item a {
+  color: #007BFF;
+  text-decoration: none;
+  display: inline-block; /* ensures max-width applies */
+  max-width: 200px; /* restricts the width */
+  overflow-wrap: break-word; /* breaks long words */
+  word-wrap: break-word; /* breaks long words for wider browser support */
+  white-space: normal; /* in case somewhere it's set to nowrap */
+}
+
+.cast-item p, .cast-item h4 {
+  word-wrap: break-word; /* ensure all texts inside the cast-item wrap */
+  overflow-wrap: break-word; /* added for better compatibility */
+}
+
+.cast-item {
+  display: flex; /* to make sure children are in a row */
+  align-items: start; /* to align items to the top */
+  gap: 5px; /* space between image and the text */
+  word-wrap: break-word; /* this will break long words to prevent overflow */
+
+}
+
+.url-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
+.cast-item > div {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word; /* ensure text wraps inside this div as well */
+  flex-shrink: 1; /* allows this to shrink */
+  max-width: calc(100% - 60px); /* considering 50px for the image width and 10px for the gap */
+}
+
+.cast-item img, 
+.cast-item video {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  flex-shrink: 0; /* prevents these from shrinking */
+}
+
+.cast-item a {
+  color: #007BFF;
+  text-decoration: none;
+  word-wrap: break-word; /* again, ensure links also wrap */
+}
+
+.cast-item a:hover {
+  text-decoration: underline;
+}
+
+
+.tab-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 20px 0;
+  gap: 20px; /* space between the buttons */
+}
+
+.tab-container button {
+  background-color: #007BFF; /* Blue background color */
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
-.App-link {
-  color: #61dafb;
+.tab-container button:hover {
+  background-color: #0056b3; /* Darken on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tab-container button.active {
+  background-color: #0056b3; /* Active state color */
 }
+
+
+
+

@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension-boilerplate-react",
+  "name": "farcaster-channels",
   "version": "5.0.4",
-  "description": "A chrome extension boilerplate built with React 18, Webpack 5, and Webpack Dev Server 4",
+  "description": "Any site can be a farcaster channel :)",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-qr-code": "^2.0.12",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -49,6 +51,7 @@
     "sass-loader": "^13.2.0",
     "source-map-loader": "^3.0.1",
     "style-loader": "^3.3.1",
+    "tailwindcss": "^3.3.3",
     "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.2",
     "type-fest": "^3.5.2",
